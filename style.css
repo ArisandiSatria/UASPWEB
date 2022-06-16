@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg) !important; 
+}
+
+section{
+    padding: 2rem;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.5rem 1rem;
+    font-size: 1rem;
+    color:#fff;
+    background: var(--main-color) !important;
+    cursor: pointer;
+    border-radius: 5%;
+    border: .1rem solid var(--main-color);
+
+}
+
+.btn:hover{
+    background: rgb(183, 150, 110) !important;
+    border: .1rem solid rgb(183, 150, 110);
+
+}
+
+.detail:hover {
+    color: white !important;
+    letter-spacing: .1rem;
+}
+
+/* Header Start */
+
+.header{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .navbar a{
+    text-decoration: none;
+    margin:0 1rem;
+    color:#fff;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icon{
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 2rem;
+
+}
+
+.header .icon:hover{
+    color:var(--main-color) !important;
+    font-size: 1.2rem;
+}
+
+.header .search{
+    position: absolute;
+    top: 115%; 
+    right: 7%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search.active{
+    transform: scaleY(1);
+}
+
+.header .search input{
+    font-size: 1rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+
+/* Header End */
+
+/* Content Start */
+
+.content .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+.content .box .frame{
+    margin: 5rem 0;
+    padding: 2.5rem;
+    text-align: center;
+    border: var(--border);
+}
+
+.content .box-pesanan{
+    margin: 5rem 0 2rem !important;
+}
+
+.content .box .pesanan {
+    margin: 0;
+}
+
+.content .box .produk{
+    margin: 0;
+    padding: 2.5rem;
+    text-align: center;
+    border: var(--border);
+}
+
+.content .box .frame h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.content .box .frame .price {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.content .box .frame:hover{
+    background:#fff;
+}
+
+.content .box .frame:hover > *{
+    color:var(--black);
+}
+
+.content .box .table, .thead, .tbody, tr{
+    border-bottom: 1px solid #fff;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.content .box .table .thead tr, .content .box .table .thead tr a{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.content .box .table .tbody tr a{
+    color: #fff;
+}
+
+.content .box .table .tbody tr td .fa-edit:hover{
+    color: yellow !important;
+    cursor: pointer;
+}
+
+.content .box .table .tbody tr td .fa-trash-alt:hover{
+    color: red !important;
+    cursor: pointer;
+}
+
+.content .box .table .thead th, .content .box .table .tbody td {
+    padding: .5rem 1rem;
+}
+
+.add{
+    margin: 4rem 0 1rem !important;
+}
+
+/* Modal Add Data Start */
+/* , .modal-edit-karyawan  */
+.modal, .modal-produk{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0);
+    transition: .2s;
+    text-align: center;
+}
+
+.modal-edit-karyawan{
+    width: auto;
+    height: auto;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+}
+
+.modal:target{
+    width: auto;
+    height: auto;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+}
+
+.content .modal .form{
+    position: absolute;
+    top: 7rem;
+    left: 30rem;
+    background-color: var(--black);
+    color: #fff;
+    padding: 2rem;
+    width: 20rem;
+    font-size: 1rem;
+}
+/* , .content .modal-edit-karyawan .form */
+.content .modal-produk .form{
+    position: absolute;
+    top: 5rem;
+    left: 25rem;
+    background-color: var(--black);
+    color: #fff;
+    padding: 1rem;
+    width: 30rem;
+    font-size: 1rem;
+}
+
+.content .modal .form h3{
+    color: var(--main-color);
+}
+
+.content .modal .form .form-add-data{
+    margin: .5rem 0;
+    display: flex;
+    flex: wrap;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.input-modal, .input-modal-karyawan {
+    padding: .5rem;
+    width: 15rem;
+    text-align: center;
+}
+/* , .input-modal-karyawan  */
+.input-modal-produk{
+    padding: .4rem;
+    width: 25rem;
+    text-align: center;
+}
+
+.content .modal .form .btn-add-data{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-cancel-add{
+    color: var(--main-color);
+    border: .1rem solid var(--main-color);
+    background-color: transparent !important;
+}
+.btn-cancel-add:hover{
+    color: #fff;
+    border: .1rem solid #fff;
+    background-color: transparent !important;
+}
+
+/* Modal Add Data End */
+
+/* Content End */
+
+/* Footer Start */
+
+footer{
+    background:var(--black);
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    /* position: fixed; */
+    bottom:0; left: 0; right: 0;
+}
+
+footer .credit{
+    font-size: 1rem;
+    color:#fff;
+    font-weight: lighter;
+    padding:.5rem;
+}
+
+footer .credit span{
+    color:var(--main-color);
+}
+
+/* Footer End */
